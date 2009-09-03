@@ -21,10 +21,10 @@ module Js
         
         return false
       end
-    end
-    
-    module Setup
-      class Error < RuntimeError; end
+      
+      module Setup
+        class Error < RuntimeError; end
+      end
     end
   end
 end
