@@ -2,6 +2,10 @@ module Js
   module Namespace
     module Framework
       def init_javascript
+        unless defined? SITE_NAME
+          raise Js::Namespace::Framework::Setup::Error, 'Please define SITE_NAME'
+        end
+        
         action = params[:action]
         action = 'new' if params[:action].eql? 'create'
         action = 'edit' if params[:action].eql? 'update'
