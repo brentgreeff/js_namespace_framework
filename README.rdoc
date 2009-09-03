@@ -44,6 +44,7 @@ Lets say
 == INSTALL
 
 braid add (this) -p
+
 get braid if you do not have it.
 
 
