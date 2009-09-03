@@ -1,0 +1,53 @@
+= Js::Namespace::Framework
+
+== Use the power of Rails to namespace your JavaScript.
+
+* Add
+
+      <%= init_javascript if requires_javascript? %>
+
+to the bottom of your layout.
+
+When you need some JS Love on a page
+Lets say :controller => 'messages', :action => 'show'
+
+* simply define the following method in the messages helper
+
+      def requires_javascript?
+        return true if action_is? 'show'
+      end
+
+* This will generate the following namespaced call.
+
+      SiteName.controller.action.init();
+
+* In this case
+
+      SiteName.messages.show.init();
+
+* Then just define your namespace and method
+
+      SiteName = {}
+      
+      SiteName.messages = {}
+      
+      SiteName.messages.show = {
+        
+        init: function() {
+          SiteName.awesomeness.activate();
+        }
+      }
+
+
+== INSTALL
+
+braid add (this) -p
+get braid if you do not have it.
+
+
+* Define
+      SITE_NAME
+somewhere
+
+
+Copyright (c) 2009 [Brent Greeff], released under the MIT license
