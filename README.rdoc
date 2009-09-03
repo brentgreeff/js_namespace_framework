@@ -9,7 +9,9 @@
 to the bottom of your layout.
 
 When you need some JS Love on a page
-Lets say :controller => 'messages', :action => 'show'
+Lets say
+
+      :controller => 'messages', :action => 'show'
 
 * simply define the following method in the messages helper
 
