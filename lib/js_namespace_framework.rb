@@ -10,7 +10,7 @@ module Js
         action = 'new' if params[:action].eql? 'create'
         action = 'edit' if params[:action].eql? 'update'
         
-        javascript_tag("#{SITE_NAME}.#{params[:controller]}.#{action}.init();")
+        javascript_tag("#{SITE_NAME}.#{params[:controller]}.#{action}_page();")
       end
       
       def requires_javascript?

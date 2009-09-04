@@ -13,7 +13,7 @@ Lets say
 
       :controller => 'messages', :action => 'show'
 
-* simply define the following method in the messages helper
+* simply define the following method in the messages_helper.rb
 
       def requires_javascript?
         return true if action_is? 'show'
@@ -21,24 +21,51 @@ Lets say
 
 * This will generate the following namespaced call.
 
-      SiteName.controller.action.init();
+      SiteName.controller.action_page();
 
 * In this case
 
-      SiteName.messages.show.init();
+      SiteName.messages.show_page();
 
 * Then just define your namespace and method
 
       SiteName = {}
       
-      SiteName.messages = {}
-      
-      SiteName.messages.show = {
+      SiteName.messages = {
         
-        init: function() {
+        show_page: function() {
           SiteName.awesomeness.activate();
         }
       }
+
+
+* If you need some more progressive enhancement on messages.index
+* In the messages_helper.rb
+
+      def requires_javascript?
+        return true if action_is? 'show', 'index'
+      end
+
+
+* In a Js file
+
+      SiteName = {}
+      
+      SiteName.messages = {
+        
+        show_page: function() {
+          SiteName.awesomeness.activate();
+        },
+        
+        index_page: function() {
+          SiteName.progressively.enhance();
+        }
+      }
+
+
+I would recommend creating one Js file per controller
+to keep things nice and neat and using Asset Packager
+to pack everything together for production.
 
 
 == INSTALL
