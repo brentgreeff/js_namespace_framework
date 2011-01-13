@@ -2,6 +2,23 @@
 
 == Use the power of Rails to namespace your JavaScript.
 
+== INSTALL
+
+      gem install js_namespace_framework
+      
+      (or use bundler)
+
+* Define
+      SITE_NAME
+
+somewhere
+
+probably:
+      config/initializers
+
+
+== Usage
+
 * Add
 
       <%= init_javascript if requires_javascript? %>
@@ -68,16 +85,6 @@ to keep things nice and neat and using Asset Packager
 to pack everything together for production.
 
 
-== INSTALL
-
-braid add (this) -p
-
-get braid if you do not have it.
-
-
-* Define
-      SITE_NAME
-somewhere
 
 
 Copyright (c) 2009 [Brent Greeff], released under the MIT license
