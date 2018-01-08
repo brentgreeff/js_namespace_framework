@@ -1,5 +1,18 @@
 = Js::Namespace::Framework
 
+== Kinda deprecated - not sure anyone would use this anymore with the amazing collection of JS frameworks available.
+
+The humble goal of this project was to namespace JS automatically on Rails projects based on the controller and action name.
+
+If you are on Users#new
+
+Instead of hunting for the JS that might be running on this page. You already know where to look:
+
+SiteName.users.new_page();
+
+It a convention of "hunting for selectors" pattern.
+
+
 == Use the power of Rails to namespace your JavaScript.
 
 == INSTALL
@@ -28,7 +41,7 @@ to the bottom of your layout.
 When you need some JS Love on a page
 Lets say
 
-      :controller => 'messages', :action => 'show'
+      controller: 'messages', action: 'show'
 
 * simply define the following method in the messages_helper.rb
 
