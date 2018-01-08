@@ -10,7 +10,7 @@ Instead of hunting for the JS that might be running on this page. You already kn
 
 SiteName.users.new_page();
 
-It a convention of "hunting for selectors" pattern.
+It a convention over "hunting for selectors" pattern.
 
 
 == Use the power of Rails to namespace your JavaScript.
